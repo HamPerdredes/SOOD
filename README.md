@@ -9,6 +9,17 @@ Semi-Supervised Object Detection~(SSOD), aiming to explore unlabeled data for bo
 # Training
 Code will be released soon.
 
+## Data preparation
+For partial labeled setting, please split the DOTA-v1.5's train set via the released data list and split tool at `./tools/data/dota/split_dota_via_list.py`
+
+For fully labeled setting, we use DOTA-V1.5 train as labeled set and DOTA-V1.5 test as unlabeled set, the model is evaluated on DOTA-V1.5 val.
+
+Details about split DOTA into patches, please follow [MMRotate's official implementation](https://github.com/open-mmlab/mmrotate/blob/main/tools/data/dota/README.md).
+
+## Todo
+- [x] Release data list
+- [ ] Release train code & guide
+- [ ] Release model weights & logs
 
 ## Acknowledgement
 Many thanks to the brilliant works ([DenseTeacher](https://github.com/Megvii-BaseDetection/DenseTeacher), [SoftTeacher](https://github.com/microsoft/SoftTeacher) and [DMCount](https://github.com/cvlab-stonybrook/DM-Count))!
