@@ -7,7 +7,15 @@ Semi-Supervised Object Detection~(SSOD), aiming to explore unlabeled data for bo
 
 
 # Training
-Code will be released soon.
+Code and Config are now available. You could train SOOD with the following command:
+```
+CUDA_VISIBLE_DEVICES=0,1 python -m torch.distributed.launch --nnodes=1 \
+--node_rank=0 --master_addr="127.0.0.1" --nproc_per_node=2 --master_port=25500 \
+train.py configs/ssad_fcos/sood_fcos_dota15_10per.py \
+--launcher pytorch \
+--work-dir xxx
+```
+Or train the supervised baseline via configs in `./configs/rotated_fcos/`.
 
 ## Data preparation
 For partial labeled setting, please split the DOTA-v1.5's train set via the released data list and split tool at `./tools/data/dota/split_dota_via_list.py`
@@ -16,10 +24,28 @@ For fully labeled setting, we use DOTA-V1.5 train as labeled set and DOTA-V1.5 t
 
 Details about split DOTA into patches, please follow [MMRotate's official implementation](https://github.com/open-mmlab/mmrotate/blob/main/tools/data/dota/README.md).
 
+After split, the data folder should be organized as follows, we further need to create empty annotations files for unlabeled data via tools/data/dota/create_empty_annfiles.py
+```
+split_ss_dota_v15
+├── train
+│   ├── images
+│   └── annfiles
+├── val
+│   ├── images
+│   └── annfiles
+├── train_xx_labeled
+│   ├── images
+│   └── annfiles
+└──train_xx_unlabeled
+    ├── images
+    └── annfiles
+
+```
+
 ## Todo
 - [x] Release data list
-- [ ] Release train code & guide
-- [ ] Release model weights & logs
+- [x] Release train code & guide (coming soon)
+- [ ] Release models
 
 ## Acknowledgement
 Many thanks to the brilliant works ([DenseTeacher](https://github.com/Megvii-BaseDetection/DenseTeacher), [SoftTeacher](https://github.com/microsoft/SoftTeacher) and [DMCount](https://github.com/cvlab-stonybrook/DM-Count))!
