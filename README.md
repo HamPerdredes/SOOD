@@ -39,7 +39,6 @@ split_ss_dota_v15
 └──train_xx_unlabeled
     ├── images
     └── annfiles
-
 ```
 
 ## Todo
