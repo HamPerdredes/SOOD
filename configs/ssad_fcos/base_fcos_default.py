@@ -134,8 +134,9 @@ custom_hooks = [
 ]
 evaluation = dict(type="SubModulesDistEvalHook", interval=3200, metric='mAP',
                   save_best='mAP')
-# 120k iters is enough for DOTA
-runner = dict(_delete_=True, type="IterBasedRunner", max_iters=120000)
+# some config as in the manuscript
+lr_config = dict(step=[120000, 160000])
+runner = dict(_delete_=True, type="IterBasedRunner", max_iters=180000)
 checkpoint_config = dict(by_epoch=False, interval=3200, max_keep_ckpts=2)
 
 # Default: disable fp16 training
