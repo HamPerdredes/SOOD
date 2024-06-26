@@ -46,9 +46,6 @@ split_ss_dota_v15
 - [x] Release train code & guide (coming soon)
 - [ ] Release models
 
-## Acknowledgement
-Many thanks to the brilliant works ([DenseTeacher](https://github.com/Megvii-BaseDetection/DenseTeacher), [SoftTeacher](https://github.com/microsoft/SoftTeacher) and [DMCount](https://github.com/cvlab-stonybrook/DM-Count))!
-
 
 ## Citation
 
