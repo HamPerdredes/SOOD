@@ -1,5 +1,8 @@
 # SOOD
-An official implementation of "SOOD: Towards Semi-Supervised Oriented Object Detection" (Accepted by CVPR 2023).
+An official implementation of "SOOD: Towards Semi-Supervised Oriented Object Detection" (Accepted by CVPR 2023) and "SOOD++: Leveraging Unlabeled Data to Boost Oriented Object Detection" (under review).
+
+# News
+We released the new version, SOOD++ [[arxiv](https://arxiv.org/abs/2407.01016)], which pushes the new state-of-the-art on the DOTA-V1.5 dataset, resulting in 72.48 mAP with single scale training and testing. The code and models will be made available as soon as possible,
 
 # Introduction
 Semi-Supervised Object Detection (SSOD), aiming to explore unlabeled data for boosting object detectors, has become an active task in recent years. However, existing SSOD approaches mainly focus on horizontal objects, leaving multi-oriented objects that are common in aerial images unexplored. This paper proposes a novel Semi-supervised Oriented Object Detection model, termed SOOD, built upon the mainstream pseudo-labeling framework. Towards oriented objects in aerial scenes, we design two loss functions to provide better supervision. Focusing on the orientations of objects, the first loss regularizes the consistency between each pseudo-label-prediction pair (includes a prediction and its corresponding pseudo label) with adaptive weights based on their orientation gap. Focusing on the layout of an image, the second loss regularizes the similarity and explicitly builds the many-to-many relation between the sets of pseudo-labels and predictions. Such a global consistency constraint can further boost semi-supervised learning. Our experiments show that when trained with the two proposed losses, SOOD surpasses the state-of-the-art SSOD methods under various settings on the DOTA-v1.5 benchmark.
@@ -45,6 +48,7 @@ split_ss_dota_v15
 - [x] Release data list
 - [x] Release train code & guide (coming soon)
 - [ ] Release models
+- [ ] Release SOOD++
 
 
 ## Citation
