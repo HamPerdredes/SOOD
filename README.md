@@ -1,8 +1,8 @@
 # SOOD
-An official implementation of "SOOD: Towards Semi-Supervised Oriented Object Detection" (Accepted by CVPR 2023) and "SOOD++: Leveraging Unlabeled Data to Boost Oriented Object Detection" (under review).
+An official implementation of "SOOD: Towards Semi-Supervised Oriented Object Detection" (Accepted by CVPR 2023) and "SOOD++: Leveraging Unlabeled Data to Boost Oriented Object Detection" (Accepted by IEEE TPAMI 2025).
 
 # News
-We released the new version, SOOD++ [[arxiv](https://arxiv.org/abs/2407.01016)], which pushes the new state-of-the-art on the DOTA-V1.5 dataset, resulting in 72.48 mAP with single scale training and testing. The code and models will be made available as soon as possible,
+[SOOD++](https://ieeexplore.ieee.org/abstract/document/11170449/) has been accepted by IEEE TPAMI 2025. SOOD++ pushes the new state-of-the-art on the DOTA-V1.5 dataset, resulting in 72.48 mAP with single scale training and testing. The code and models will be made available as soon as possible.
 
 # Introduction
 Semi-Supervised Object Detection (SSOD), aiming to explore unlabeled data for boosting object detectors, has become an active task in recent years. However, existing SSOD approaches mainly focus on horizontal objects, leaving multi-oriented objects that are common in aerial images unexplored. This paper proposes a novel Semi-supervised Oriented Object Detection model, termed SOOD, built upon the mainstream pseudo-labeling framework. Towards oriented objects in aerial scenes, we design two loss functions to provide better supervision. Focusing on the orientations of objects, the first loss regularizes the consistency between each pseudo-label-prediction pair (includes a prediction and its corresponding pseudo label) with adaptive weights based on their orientation gap. Focusing on the layout of an image, the second loss regularizes the similarity and explicitly builds the many-to-many relation between the sets of pseudo-labels and predictions. Such a global consistency constraint can further boost semi-supervised learning. Our experiments show that when trained with the two proposed losses, SOOD surpasses the state-of-the-art SSOD methods under various settings on the DOTA-v1.5 benchmark.
@@ -62,4 +62,12 @@ If you find this codebase helpful, please consider to cite:
   journal={CVPR},
   year={2023}
 } 
+
+@article{liang2025sood++,
+  title={Sood++: Leveraging unlabeled data to boost oriented object detection},
+  author={Liang, Dingkang and Hua, Wei and Shi, Chunsheng and Zou, Zhikang and Ye, Xiaoqing and Bai, Xiang},
+  journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},
+  year={2025},
+  publisher={IEEE}
+}
 ```
